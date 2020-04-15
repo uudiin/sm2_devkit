@@ -51,3 +51,6 @@ openssl x509 -req -days 3650 \
 
 openssl x509 -in ca.crt -outform DER -out ca.der
 openssl x509 -in cert.pem -outform DER -out cert.der
+
+xxd -i ca.der > data_ca.c
+xxd -i cert.der > data_cert.c
