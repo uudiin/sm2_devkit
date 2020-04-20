@@ -11,18 +11,13 @@
 #include <linux/module.h>
 #include <linux/ratelimit.h>
 
-#define __log_fatal(fmt, ...) \
-    pr_emerg("%s.%s: " fmt, THIS_MODULE->name, __func__, ##__VA_ARGS__)
-#define __log_error(fmt, ...) \
-    pr_err  ("%s.%s: " fmt, THIS_MODULE->name, __func__, ##__VA_ARGS__)
-#define __log_warn(fmt, ...)  \
-    pr_warn ("%s.%s: " fmt, THIS_MODULE->name, __func__, ##__VA_ARGS__)
-#define __log_info(fmt, ...)  \
-    pr_info ("%s.%s: " fmt, THIS_MODULE->name, __func__, ##__VA_ARGS__)
+#define __log_fatal(fmt, ...) pr_emerg("%s: " fmt, __func__, ##__VA_ARGS__)
+#define __log_error(fmt, ...) pr_err  ("%s: " fmt, __func__, ##__VA_ARGS__)
+#define __log_warn(fmt, ...)  pr_warn ("%s: " fmt, __func__, ##__VA_ARGS__)
+#define __log_info(fmt, ...)  pr_info ("%s: " fmt, __func__, ##__VA_ARGS__)
 
 #define __log_info_ratelimited(fmt, ...)  \
-    pr_info_ratelimited("%s.%s: " fmt,    \
-            THIS_MODULE->name, __func__, ##__VA_ARGS__)
+    pr_info_ratelimited("%s: " fmt, __func__, ##__VA_ARGS__)
 
 #else
 
