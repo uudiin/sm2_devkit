@@ -24,6 +24,7 @@ EOF
 fi
 
 openssl ecparam -genkey -name SM2 -text -out private.pem
+openssl ec -in private.pem -pubout -out pubkey.pem
 
 openssl req -new \
 	-key private.pem \
