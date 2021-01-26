@@ -40,7 +40,7 @@ openssl req -new \
     -subj "/C=CN/ST=Zhejiang/L=Hangzhou/O=Alibaba/OU=OS/CN=test/emailAddress=test@foo.com"
 
 
-# Generate a self signed root certificate:
+# Generate a self signed root certificate
 
 openssl ecparam -genkey -name SM2 -text -out ca.key
 openssl req -new \
