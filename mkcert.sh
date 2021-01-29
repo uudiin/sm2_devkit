@@ -24,7 +24,7 @@ EOF
 fi
 
 openssl ecparam -genkey -name SM2 -text -out private.pem
-openssl ec -in private.pem -pubout -out pubkey.pem
+#openssl ec -in private.pem -pubout -out pubkey.pem
 
 openssl req -new \
 	-key private.pem \
@@ -50,8 +50,8 @@ openssl x509 -req -days 3650 \
     -in csr.pem \
     -out cert.pem
 
-openssl x509 -in ca.crt -outform DER -out ca.der
+#openssl x509 -in ca.crt -outform DER -out ca.der
 openssl x509 -in cert.pem -outform DER -out cert.der
 
-xxd -i ca.der > data_ca.c
-xxd -i cert.der > data_cert.c
+#xxd -i ca.der > data_ca.c
+#xxd -i cert.der > data_cert.c
