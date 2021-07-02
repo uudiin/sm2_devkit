@@ -20,6 +20,16 @@ cat > test-ca.conf <<- EOF
 	authorityKeyIdentifier=keyid:always,issuer
 EOF
 
+## OK
+#openssl req -verbose -new -nodes -utf8 -sha1 -days 10000 -batch -x509 \
+#    -config test-ca.conf \
+#    -copy_extensions copyall \
+#    -newkey ec \
+#    -pkeyopt ec_paramgen_curve:prime256v1 \
+#    -out prime256v1.cer -outform DER \
+#    -keyout prime256v1.key
+
+## FIXME
 #openssl req -verbose -new -nodes -utf8 -days 10000 -batch -x509 \
 #    -sm3 -sigopt "distid:1234567812345678" \
 #    -config test-ca.conf \
