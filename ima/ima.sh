@@ -53,6 +53,8 @@ openssl x509 -req -days 3650 \
     -in csr.pem \
     -out cert.pem
 
+openssl x509 -in cert.pem -outform DER -out cert.der
+
 #openssl ec -in private.pem -noout -text
 #openssl x509 -in cert.pem -noout -text
 
